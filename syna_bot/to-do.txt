@@ -1,0 +1,34 @@
+continuous learning
+1. Message Content Filters:
+Filter out messages that contain certain keywords or inappropriate content. You can create a list of "bad" words, phrases, or patterns to exclude. Additionally, if you want to focus on more valuable data, you can ensure only relevant messages are stored for training.
+
+2. User Feedback:
+Implement a feedback loop where users can rate the bot's responses or flag messages. This can help you identify and discard messages that are less useful or inappropriate.
+
+3. Message Length:
+Messages that are too short (e.g., "OK", "Yes", "No") or too long (e.g., multiple paragraphs without context) might not contribute meaningfully to the model's learning. You can discard such messages or only store those that meet certain length criteria.
+
+4. Sentiment Analysis:
+You can use sentiment analysis to identify and discard messages that express negative sentiment, inappropriate behavior, or aggression. Only messages with neutral or positive sentiment could be included for training.
+
+5. Spam and Repeated Messages:
+Messages that appear to be spammy or repetitive should be discarded. You can check for repeated patterns or frequent interactions from the same user in a short time span and disregard them.
+
+6. Manual Review:
+For a more stringent filter, you can implement a system where flagged messages are stored for manual review. Once reviewed, only valid messages will be used for retraining.
+
+
+train_set = []
+on message (maybe after ask cmd)
+
+check message content
+using openai to see if the message is good for training
+add to train_set with correct format
+
+train function that runs every so often
+if train_set len is more 1
+train data
+save model
+
+redeployment
+bot.loop.create_task(fine_tune_model())
