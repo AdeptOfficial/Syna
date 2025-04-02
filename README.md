@@ -2,7 +2,7 @@
  
 Syna aims to be a Vtuber with distinct personality
 
-it will use llama3.2-8b as the base model (improve once sustem imrpoves)
+it will use llama3.2-8b as the base model (improve once system imrpoves)
 
 tech stack:
 - python - AI model
